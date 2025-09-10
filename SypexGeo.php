@@ -1,5 +1,27 @@
 <?php
 
+/***************************************************************************\
+| Sypex Geo (PHP 8 port)                                                    |
+| (c)2025 GLOBUS.studio                                                     |
+| (c)2025 Yevhen Leonidov                                                   |
+|---------------------------------------------------------------------------|
+| Maintained PHP 8.x port of the original Sypex Geo library.                |
+| Original work by zapimir & BINOVATOR — see original header below.         |
+|---------------------------------------------------------------------------|
+| This port is released under the MIT License (see LICENSE).                |
+\***************************************************************************/
+
+
+/***************************************************************************\
+| Sypex Geo                  version 2.2.3                                  |
+| (c)2006-2014 zapimir       zapimir@zapimir.net       http://sypex.net/    |
+| (c)2006-2014 BINOVATOR     info@sypex.net                                 |
+|---------------------------------------------------------------------------|
+|     created: 2006.10.17 18:33              modified: 2014.06.20 18:57     |
+|---------------------------------------------------------------------------|
+| Sypex Geo is released under the terms of the BSD license                  |
+|   http://sypex.net/bsd_license.txt                                        |
+\***************************************************************************/
 define('SXGEO_FILE', 0);
 define('SXGEO_MEMORY', 1);
 define('SXGEO_BATCH',  2);
