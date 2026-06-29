@@ -156,4 +156,34 @@ final class SxGeoIntegrationTest extends TestCase
             );
         }
     }
+
+    public function testGetMethodAdaptsToDatabaseType(): void
+    {
+        $sxgeo = new SxGeo(self::$dbPath, SxGeo::MODE_MEMORY);
+        $result = $sxgeo->get('8.8.8.8');
+
+        if ($sxgeo->about()['City']['Max Length'] > 0) {
+            self::assertIsArray($result);
+            self::assertSame('US', $result['country']['iso']);
+        } else {
+            self::assertIsString($result);
+            self::assertSame('US', $result);
+        }
+    }
+
+    public function testGetCountryIdOnCountryDbReturnsDirectId(): void
+    {
+        $sxgeo = new SxGeo(self::$dbPath, SxGeo::MODE_FILE);
+        if ($sxgeo->about()['City']['Max Length'] > 0) {
+            self::markTestSkipped('City database: country-only path not exercised.');
+        }
+
+        $id  = $sxgeo->getCountryId('8.8.8.8');
+        $iso = $sxgeo->getCountry('8.8.8.8');
+
+        self::assertGreaterThan(0, $id);
+        self::assertSame($sxgeo->id2iso[$id], $iso);
+        self::assertSame(0, $sxgeo->getCountryId('not-an-ip'));
+        self::assertSame('', $sxgeo->getCountry('10.0.0.1'));
+    }
 }

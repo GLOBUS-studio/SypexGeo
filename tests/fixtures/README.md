@@ -1,6 +1,13 @@
-SypexGeo .dat fixtures used by the integration test suite go here.
+## Database fixtures
 
-The directory is intentionally git-ignored except for this README. To run
-the integration tests locally, drop a SypexGeo binary database here and
-name it `SxGeo.dat`, or set the `SXGEO_DB` environment variable to the
-absolute path of an existing database.
+Place SypexGeo binary `.dat` files here to enable the integration test suite.
+
+Download databases from: **https://sypexgeo.net/en/download/**
+
+| File | Type | Used by |
+|---|---|---|
+| `SxGeo.dat` | Country | country-only integration tests |
+| `SxGeoCity.dat` | City | city integration + coverage tests |
+
+The directory is git-ignored except for this README. Without fixtures, the
+integration suite is skipped automatically — `composer test` will still pass.
