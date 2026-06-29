@@ -67,8 +67,8 @@ class SxGeo
     /** @var array<int, string>|string */
     protected $pack;
 
-    protected bool $batch_mode = false;
-    protected bool $memory_mode = false;
+    public bool $batch_mode = false;
+    public bool $memory_mode = false;
 
     /** @var array<int, string> ISO 3166-1 alpha-2 mapping by SypexGeo internal country id. */
     public array $id2iso = [
@@ -442,6 +442,9 @@ class SxGeo
         return $id === false ? '' : ($this->id2iso[$id] ?? '');
     }
 
+    /**
+     * @return int Internal country id (0 for unknown/invalid input).
+     */
     public function getCountryId(string $ip): int
     {
         if ($this->max_city) {

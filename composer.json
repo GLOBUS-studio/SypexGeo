@@ -4,7 +4,11 @@
     "type": "library",
     "keywords": ["sypexgeo", "geoip", "ip-to-country", "ip-to-city", "geolocation", "ip"],
     "license": "MIT",
-    "homepage": "https://github.com/globus-studio/SypexGeo",
+    "homepage": "https://packagist.org/packages/globus-studio/sypexgeo",
+    "support": {
+        "issues": "https://github.com/GLOBUS-studio/SypexGeo/issues",
+        "source": "https://github.com/GLOBUS-studio/SypexGeo"
+    },
     "authors": [
         {
             "name": "GLOBUS.studio",
